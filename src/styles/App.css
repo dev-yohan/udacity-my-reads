@@ -1,0 +1,44 @@
+.header {
+  background-color: #0288d1;
+}
+
+.footer {
+  background-color: #212121;
+}
+
+.copyright {
+  background-color: #000000 !important;
+}
+
+.shelf {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.shelf:last-of-type {
+  border-bottom: none;
+}
+
+.shelf h2 {
+  font-size: 2rem;
+}
+
+.book {
+
+}
+
+.book img {
+  height: 312px;
+}
+
+.book select {
+  display: block !important;
+}
+
+.book .card-action {
+  background-color: #fb8c00;
+}
+
+.book .card-title {
+    font-size: 20px !important;
+    font-weight: bolder;
+}
