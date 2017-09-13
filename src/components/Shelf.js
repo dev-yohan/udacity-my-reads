@@ -17,6 +17,7 @@ class Shelf extends Component {
                   shelves={shelves}
                   shelfInfo={shelfInfo}
                   updateBookShelf={updateBookShelf}
+                  books={books}
                 />
               ))
             ) : (

@@ -11,7 +11,10 @@ class Book extends Component {
 
 		if (this.props.data.shelf)  {
 			shelfToMount = this.props.data.shelf
-		}
+		} else {
+      let matches = this.props.books.filter((book) => book.id === this.props.data.id)
+      shelfToMount = matches.length > 0 ? matches[0].shelf : ''
+    }
 
 		this.setState({ shelf: shelfToMount})
 	}
@@ -21,7 +24,7 @@ class Book extends Component {
   }
 
   render() {
-    const { data, shelves, shelfInfo } = this.props;
+    const { data, shelves } = this.props;
     const { shelf } = this.state;
 
     return(
@@ -32,13 +35,7 @@ class Book extends Component {
           </div>
           <div className="card-content">
             <span className="card-title">{data.title}</span>
-            {data.authors ? (
-              data.authors.map((author, index) => (
-                <p key={index}>{author}</p>
-              ))
-            ): (
-              <p>No authors available</p>
-            )}
+            <p>{data.authors ? data.authors.join(', '): 'No authors available'}</p>
           </div>
           <div className="card-action">
             <select
@@ -48,6 +45,9 @@ class Book extends Component {
 							{shelves.map((shelve) => (
 								<option key={shelve.keyword} value={shelve.keyword}>{shelve.name}</option>
 							))}
+              {shelf === '' &&
+								<option value=''>None</option>
+							}
 						</select>
           </div>
         </div>

@@ -40,13 +40,14 @@ class SearchBooks extends Component {
           </form>
         </div>
         <div className='row'>
-          {filteredBooks ? (
+          {filteredBooks && filteredBooks.length > 0 ? (
             filteredBooks.map((bookData, index) => (
               <Book key={`${bookData.shelf}_${index}`}
                 data={bookData}
                 shelves={shelves}
                 shelfInfo={bookData.shelf}
                 updateBookShelf={updateBookShelf}
+                books={books}
               />
             ))
           ) : (
