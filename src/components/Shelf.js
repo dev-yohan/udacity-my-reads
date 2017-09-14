@@ -12,7 +12,7 @@ class Shelf extends Component {
           <div className='row'>
             {books ? (
               books.filter((book) => shelfInfo.keyword === book.shelf).map((bookData, index) => (
-                <Book key={`${shelfInfo.keyword}_${index}`}
+                <Book key={`${bookData.id}`}
                   data={bookData}
                   shelves={shelves}
                   shelfInfo={shelfInfo}

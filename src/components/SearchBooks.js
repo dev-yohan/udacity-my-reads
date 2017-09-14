@@ -42,7 +42,7 @@ class SearchBooks extends Component {
         <div className='row'>
           {filteredBooks && filteredBooks.length > 0 ? (
             filteredBooks.map((bookData, index) => (
-              <Book key={`${bookData.shelf}_${index}`}
+              <Book key={`${bookData.id}`}
                 data={bookData}
                 shelves={shelves}
                 shelfInfo={bookData.shelf}
